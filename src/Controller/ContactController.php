@@ -47,7 +47,7 @@ class ContactController extends AbstractController
             //Création du mail
             $message = (new Email())
                 ->from($contactFormData['email'])
-                ->to('')
+                ->to('admin@admin.fr')
                 ->subject($subject)
                 ->text($contactFormData['message']);
 
