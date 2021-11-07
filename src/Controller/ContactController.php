@@ -40,7 +40,7 @@ class ContactController extends AbstractController
                 $subject = "Renseignements";
             }
             elseif ($contactFormData['objet'] == 5){
-                $subject = "AUtres";
+                $subject = "Autres...";
             }
 
 
