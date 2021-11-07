@@ -1,0 +1,141 @@
+
+main{
+    color: white;
+}
+.content-header-title .title {
+    font-weight: 700;
+    margin: 0;
+    padding-right: 0;
+    font-size: 4em !important;
+    font-family: 'Jura';
+    text-align: center;
+    padding-right: 0px ;
+    color: aliceblue;
+    background-color: #1e1e2f !important;
+}
+
+table{
+    color: white !important;
+}
+
+table a{
+    color: white !important;
+}
+
+.page-item.active .page-link {
+    background-color: #d250dc !important;
+    border-color: #59195e !important;
+}
+
+.btn-primary, .btn-primary:not(:disabled):not(.disabled):not(.btn-link):active, .btn-primary:not(:disabled):not(.disabled):not(.btn-link):active:focus, .btn-primary:not(:disabled):not(.disabled):not(.btn-link):focus, .btn-primary:not(:disabled):not(.disabled):not(.btn-link):hover {
+    background-color: #d250dc !important;
+}    
+
+.card{
+    font-family:jura;
+    border-color:blue;
+}
+
+.user-menu-wrapper a.user-details, .user-menu-wrapper a.user-details:hover {
+    font-size: 1.5em !important;
+    font-family: 'Jura';
+    color: rgba(255, 255, 255, 0.562) !important;
+
+}
+
+.user-menu-wrapper span.user-avatar .user-avatar-icon-foreground {
+    background-color: #d250dc;
+    color: white !important;
+}
+
+.form-group label, .form-group legend.col-form-label {
+    color: white !important;
+}
+
+.card-title {
+    color: aliceblue;
+    font-weight: bold;
+    font-family:jura;
+    font-size: 1.75em;
+}
+
+body{
+    background-color: #1e1e2f !important;
+}
+
+.content-header {
+    background-color: #1e1e2f !important;
+}
+
+
+.card-header {
+    background-color: r#1e1e2f !important;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    padding: 0.5rem 1rem;
+    font-family:jura;
+    font-family: 2em !important;
+}
+
+.card-header:first-child {
+font-size: 2em;
+}
+
+.border-custom {
+    border-color: #d250dc !important;
+}
+
+#main-menu .menu a {
+    align-items: flex-start;
+    color: var(--sidebar-menu-color);
+    display: flex;
+    padding: 4px 4px 4px0;
+    font-size: 1.25em;
+    font-family: 'Jura';
+    margin-top: 2em;
+}
+
+#main-menu .menu a {
+    font-size: 1.25em;
+    color: rgb(255, 255, 255) !important;
+}
+
+#main-menu .menu .menu-icon {
+    font-size: 1.25em !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+.main-header #header-logo .logo-custom {
+    font-size: 1.4em;
+    margin-top: 1em;
+    color: #fab340;
+    font-family: jura;
+}
+
+.sidebar{
+    background: rgb(225,79,202);
+    background: linear-gradient(180deg, rgb(56, 12, 139) 47%, #d009df  100%) !important;
+    border: black;
+}
+
+.resizer-handler {
+    cursor: col-resize;
+    display: block;
+    margin: 0 0 0 7px;
+    min-height: 100vh;
+    transition: background .7s;
+    width: 1px;
+    background-color: black;
+}
+
+.fa-search{
+    font-size: 1.5em;
+    color: white !important;
+}
+
+.main-content{
+    height: 100vh !important;
+}
+
+.bg-custom{
+    background-color: rgba(39,41,60,255) !important;
+}

@@ -1,0 +1,151 @@
+
+   
+main{
+    background: url(../photos/consolemix.jpg) no-repeat center/ cover;
+    animation-duration: 2s;
+}
+
+.animate__animated.animate__slideInRight{
+   --animate-duration: 1s;
+}
+ 
+h1{
+    font-family: 'Jura', sans-serif;
+    padding-top: 2em;
+    font-size: 1.5;
+    color: #ffffff;
+    text-shadow: 0.06em 0.06em 0.03em rgb(48, 150, 218);
+}
+ 
+p {
+    color: rgb(233, 161, 27);
+    text-align: center;
+    font-family: 'Jura', sans-serif;
+    font-size: 1em;
+}
+ 
+.section1{
+    padding: 5%;
+}
+ 
+.section2 {
+    min-height:35vh;
+    background: url(../photos/ingeson.jpg) no-repeat center/ cover;
+}
+ 
+.section3 {
+    padding: 5%;
+}
+ 
+.section4 {
+    height: 25vh;
+}
+ 
+.section4 .micro {
+    background: url(../photos/rode.jpg) no-repeat center/ cover;
+}
+ 
+.section4 .photo{
+    background: url(../photos/canon.jpg) no-repeat center/ cover;
+}
+ 
+.section5 {
+    padding: 5%;
+}
+
+.carousel{
+    height: 50vh; 
+}
+
+.carousel-inner{
+    height: 50vh; 
+}
+
+.section6 .carousel-item{
+    height: 50vh; 
+}
+
+
+/* NOUVELLES RÈGLES POUR LE FORMAT TABLETTE (ENTRE 415PX ET 991.98PX)*/ 
+@media (min-width: 415px) and (max-width: 991.98px) {
+
+    main{
+        min-height: 90vh !important;
+    }
+
+        h1 {
+        font-size: 45px !important;
+    }
+    p {
+        font-size: 1.5em;
+    }
+    .section1{
+        padding: 8%;
+    }
+    .section2 {
+        min-height: 45vh;
+    }
+    .section3 {
+        padding: 8%;
+    }
+
+    .section4 {
+        height: 30vh;
+    }
+
+    .section4 img {
+     margin:1em;
+    }
+
+
+    .section5{
+        padding: 8%;
+    }
+    
+
+}
+    
+  
+/* NOUVELLES RÈGLES POUR LE FORMAT DESKTOP (991.98PX)*/ 
+@media (min-width: 1024px) {
+
+    main{
+        min-height: 90vh;
+    }
+    h1{
+        font-size: 85px;
+    }
+    p {
+       font-size: 2.25em;
+    }
+    .section1{
+        padding: 8%;
+    }
+    .section2 {
+        min-height: 80vh;
+    }
+    .section3 {
+        padding: 8%;
+    }
+    .section4 {
+        height: 55vh;
+    }
+    .section5{
+          padding: 8%;
+    }
+  
+    .carousel{
+        background-color: black; 
+    }
+    .carousel-inner{
+        margin: 0 auto;
+        width: 30%; 
+    }
+
+    .section6 .carousel-item{
+        height: 70vh;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+    
+}

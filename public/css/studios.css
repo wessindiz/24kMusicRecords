@@ -1,0 +1,132 @@
+
+
+body{
+    background:linear-gradient(#1e058b, #640c7a);
+}
+
+main {
+    min-height: 100vh;
+    background: url("../photos/rode.jpg") no-repeat center/ cover;
+    animation-duration: 2s;
+}
+
+.animate__animated.animate__slideInRight{
+    --animate-duration: 1s;
+}
+
+h1 {
+    font-family: 'Jura', sans-serif;
+    padding-top: 2em;
+    font-size: 35px;
+    color: #ffffff;
+    text-shadow: 0.06em 0.06em 0.03em rgb(48, 150, 218);
+}
+
+h2{
+    padding: 8%;
+    font-size: 2em;
+    color: rgb(233, 161, 27);
+    text-shadow: 0.04em 0.05em 0.05em rgba(6, 6, 7, 0.904);
+}
+
+p {
+    color: rgb(247, 244, 240);
+    font-family: 'Jura', sans-serif;
+    font-size: 1em ;
+}
+.section1{
+    height: 25vh;
+}
+
+.record1{
+    background: url("../photos/record1.jpg") no-repeat center/ cover;
+}
+
+
+.record2{
+    background: url("../photos/record2.jpg") no-repeat center/ cover;
+}
+
+.section2{
+    padding: 5%;
+}
+
+.video{
+    margin-bottom: -0.25em;
+    width: 100%;
+}
+
+.section3{
+    height: 25vh;
+}
+
+.section4{
+    padding: 8%;
+}
+
+.photo{
+    height: 100%;
+    width: 50%;
+    background: url("../photos/photo.jpg") no-repeat center/ cover;
+}
+
+.camera{
+    height: 100%;
+    width: 50%;
+    background: url("../photos/camera1.jpg") no-repeat center/ cover;
+}
+  
+  /* NOUVELLES RÈGLES POUR LE FORMAT TABLETTE (ENTRE 768PX ET 991.98PX)*/
+  @media (min-width: 400px) and (max-width: 991.98px) {
+
+    main{
+      min-height: 90vh !important;
+    }
+
+    h1 {
+      font-size: 45px;
+    }
+
+    h2{
+        font-size: 30px !important;
+    }
+
+    .section1{
+        height: 25vh;
+    }
+    
+    .section3{
+        height: 25vh;
+    }
+        
+    p {
+        font-size: 1.5em ;
+    }
+  }
+    
+  
+    /* NOUVELLES RÈGLES POUR LE FORMAT DESKTOP (991.98PX)*/ 
+  @media (min-width: 991.98px) {
+    main{
+      min-height: 100vh !important;
+    }
+    h1 {
+      font-size: 85px;
+    }
+
+    h2{
+        font-size: 60px !important;
+    }
+
+    .section1{
+    height: 45vh;
+    }
+
+    .section3{
+        height: 60vh;
+    }
+
+    p {
+        font-size: 2em ;
+    }
+  }

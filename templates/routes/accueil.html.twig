@@ -1,0 +1,81 @@
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	24K /Accueil
+{% endblock %}
+
+
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/accueil.css') }}">
+{% endblock %}
+
+
+{% block body %}
+	<div class="home color-change-2x">
+	
+	{% if app.user %}
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success alert-dismissible fade show" style="  font-size: 1.25em; font-family: jura; font-weight: bold; text-align: center; margin-bottom: 0rem;" role="alert">
+				{{ message }} {{ app.user.prenom }} !
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		{% endfor %}
+	{% endif %}
+
+		<main class=" min-vh-100">
+			<h1 class="animate__animated animate__slideInRight text-center fw-bold">24 Carats Studio</h1>
+		</main>
+		<section class="section1  mb-5 text-center">
+			<p class="mt-4">24 Carats Studio est à la pointe de la technologie. Profitez d'une qualité optimale pour vos enregistrements, mixages, masterings, sous les conseils avisés de nos professionnels.</p>
+		</section>
+		<section class="section2"></section>
+		<section class="section5 text-center">
+			<p class="mt-4">
+				Découvrez nos artistes !</p>
+		</section>
+		<section class="section6">
+
+
+			<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src="{{ asset('photos/din.jpg') }}" class="d-block w-100 artist" alt="Din">
+					</div>
+					<div class="carousel-item">
+						<img src="{{ asset('photos/torec.jpg') }}" class="d-block w-100 artist" alt="Torec">
+					</div>
+					<div class="carousel-item">
+						<img src="{{ asset('photos/smay.jpg') }}" class="d-block w-100 artist" alt="Smay">
+					</div>
+					<div class="carousel-item">
+						<img src="{{ asset('photos/wess.jpeg') }}" class="d-block w-100 artist" alt="Wess">
+					</div>
+					<div class="carousel-item">
+						<img src="{{ asset('photos/nera.jpg') }}" class="d-block w-100 artist" alt="Nera">
+					</div>
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</section>
+
+		<section class="section3 text-center">
+			<p class="mt-4">Découvrez nos différents studios que ce soit pour vous lâcher devant un micro, ou taper la pose devant un appareil photo.</p>
+		</section>
+		<section class="section4 d-flex">
+			<div class="micro col-6"></div>
+			<div class="photo col-6"></div>
+		</section>
+	</div>
+{% endblock %}
+
+

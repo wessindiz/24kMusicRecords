@@ -1,0 +1,102 @@
+form{
+    min-height: 100vh;
+}
+
+
+body{
+    text-align: center;
+}
+
+h1{
+    font-family: 'Jura', sans-serif;
+    padding-top: 1.5em;
+    font-size: 2em !important;
+    color: #ffffff;
+    text-shadow: 0.06em 0.06em 0.03em rgb(48, 150, 218);
+}
+
+
+form {
+    text-align: -webkit-center;
+}
+
+fieldset {
+    width: 50%;
+    background-color: rgb(31, 39, 39);
+    border-radius: 1em;
+
+
+}
+
+.mb-3 {
+    text-align: -webkit-center;
+}
+
+label {
+    font-size: 1.25em !important;
+    margin-top: 0.5em;
+    color: white;
+    font-family: jura;
+}
+
+form{
+    /* background-color: rgb(31, 39, 39); */
+    border-color: blueviolet;
+    border-radius: 1em;
+}
+
+.input-group {
+    width: 40%;
+    font-size: 1.25em;
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    font-size: 1.25em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-family: jura;
+}
+
+.border-2 {
+    border-width: 1px !important;
+}
+
+.border-warning {
+    border-color: #ffc107!important;
+    border-radius: 1em !important;
+}
+
+.rounded {
+    border-radius: 1em !important;
+}
+
+.is-invalid~.invalid-feedback, .is-invalid~.invalid-tooltip, .was-validated :invalid~.invalid-feedback, .was-validated :invalid~.invalid-tooltip {
+    font-size: 1.25em;
+    font-family: jura;
+    font-weight: bold;
+    color: #ff162d;
+}
+
+.form-control.is-invalid, .was-validated .form-control:invalid {
+    border-color: #d6051a;
+    border-width: 3px;
+}
+
+p {
+    color: white;
+    margin-top: -2em;
+    margin-bottom: 3em;
+}
+
+.mb-3{
+    color: #ffffff;
+    padding-top: 2em;
+    font-family: jura;
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    margin-top: 0em;
+}
+
+
+

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello PersonneController!
+{% endblock %}
+
+{# {% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/accueil.css') }}">
+{% endblock %} #}
+
+{% block body %}
+	<div class="home color-change-2x">
+		<div>
+			<br>
+			<br>
+			<br>
+			<div class="example-wrapper d-flex justify-content-around">
+				<div class="card" style="width: 18rem;">
+					<img src=" {{ asset('photo-artiste/' ~ artiste.photo)}}" class="card-img-top">
+					{{ form_start(formedit) }}
+                    {{form_row(formedit.photo)}}
+                    {{form_rest(formedit)}}
+					{{ form_end(formedit) }}
+				</div>
+
+			</div>
+			<br>
+			<br>
+			<br>
+		</div>
+	</div>
+{% endblock %}

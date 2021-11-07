@@ -1,0 +1,179 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Calendrier
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/calendar/new.css') }}">
+{% endblock %}
+
+{% block body %}
+
+
+
+	{% for message in app.flashes('success') %}
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+			{{ message }}
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	{% endfor %}
+
+
+	{% for message in app.flashes('danger') %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+			{{ message }}
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	{% endfor %}
+	
+	{% if app.user %}
+		<p>
+			Bonjour
+			{{app.user.Prenom}}</p>
+
+	{% endif %}
+
+	<div id="calendrier"></div>
+
+	<div class="legende">
+		<ul class="d-flex">
+			<li>
+				<i class="fas fa-square musique"></i>
+				: créneau de musique indisponible</li>
+			<li class="mx-4">
+				<i class="fas fa-square photo"></i>
+				: créneau de photo indisponible</li>
+		</ul>
+	</div>
+
+
+	<!-- Button trigger modal -->
+	<button type="button" class="btn btn-primary m-5 btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+		Réservez votre session!
+	</button>
+
+	<!-- Modal -->
+
+	<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+		
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+					<div>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<h5 class="modal-title" id="exampleModalLabel">Prenez votre RDV!</h5>
+				</div>
+				<div class="modal-body">
+
+
+					<div class="d-flex justify-content-around m-3">
+						<div class="mb-1">
+							{{ form_label(form.categorie) }}
+						</div>
+
+						<div class="form-floating mb-4">
+							{{ form_widget(form.categorie) }}
+						</div>
+					</div>
+
+					<div class="m-3">
+						<div class="mb-1">
+							{{ form_label(form.title) }}
+						</div>
+
+						<div class="form-label form-floating mb-4">
+							{{ form_widget(form.title) }}
+						</div>
+					</div>
+
+					<div class="m-3">
+						<div class="mb-1">
+							{{ form_label(form.start) }}
+						</div>
+
+						<div class="form-floating mb-4 ">
+							{{ form_widget(form.start) }}
+						</div>
+					</div>
+
+
+					<div class="m-3">
+						<div class="mb-1">
+							{{ form_label(form.end) }}
+						</div>
+
+						<div class="form-label form-floating mb-4">
+							{{ form_widget(form.end) }}
+						</div>
+					</div>
+
+
+					<div class="m-3">
+						<div class="mb-1">
+							{{ form_label(form.description) }}
+						</div>
+
+						<div class="form-floating mb-4 ">
+							{{ form_widget(form.description) }}
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer btn btn-secondary" data-bs-dismiss="modal">
+					{{ form_row(form.envoyer) }}
+				</div>
+				{{ form_end(form) }}
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+
+
+
+{% block javascripts %}
+<script>
+window.onload = () => {
+	let calendarElt = document.querySelector('#calendrier')
+	let calendar = new FullCalendar.Calendar(calendarElt, {
+	initialView: 'timeGridWeek',
+
+	selecHelper: false,
+	selectOverlap: false,
+	locale: 'fr',
+	timeZone: 'Europe/Paris',
+
+	headerToolbar: {
+		start: 'prev,next today',
+		center: 'title',
+		end: 'timeGridWeek,timeGridDay'
+	},
+
+	events: {{ data| raw }},
+		nowIndicator: true,
+		display: 'inverse-background',
+		editable: true,
+		eventResizableFromStart: true
+	});
+
+	calendar.on('eventChange', (info) => {
+		let url = `/api/${
+		info.event.id
+		}/edit`
+		let donnees = {
+			"title": info.event.title,
+			"description": info.event.extendedProps.description,
+			"start": info.event.start,
+			"end": info.event.end,
+			"backgroundColor": info.event.backgroundColor,
+			"borderColor": info.event.borderColor,
+			"textColor": info.event.textColor
+		}
+
+	})
+	calendar.render()
+}
+	</script>
+{% endblock %}

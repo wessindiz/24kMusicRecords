@@ -1,0 +1,44 @@
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block content_title 'TABLEAU DE BORD' %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block main %}
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card text-white bg-secondary mb-3 border-custom">
+                <div class="card-header text-center text-white bg-custom"> Artistes <i class="fas fa-music"></i></div>
+                <div class="card-body bg-custom">
+                    <h1 class="display-1 m-2 text-center text-white bg-custom">{{artistes}}</h1>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6">
+            <div class="card text-white bg-primary mb-3 border-custom">
+                <div class="card-header text-center text-white bg-custom">Utilisateurs <i class='fas fa-users'></i></div>
+                <div class="card-body bg-custom">
+                    <h1 class="display-1 m-2 text-center text-white bg-custom">{{Users}}</h1>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+        <div class="card text-center text-white bg-custom" style="width: 50rem;">
+            <div class="card-body">
+                <h5 class="card-title mb-3">STATISTIQUES STUDIO</h5>
+                <p class="card-text"><canvas id="myChart" width="600" height="400"></canvas></p>
+            </div>
+        </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+

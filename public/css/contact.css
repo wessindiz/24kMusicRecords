@@ -1,0 +1,105 @@
+
+   
+main{
+    background: url(../photos/cabine.jpeg) no-repeat center/ cover;
+    animation-duration: 2s;
+}
+
+
+.animate__animated.animate__slideInRight{
+   --animate-duration: 1s;
+}
+ 
+h1{
+    font-family: 'Jura', sans-serif;
+    padding-top: 2em;
+    font-size: 1.5em;
+    color: #ffffff;
+    text-shadow: 0.06em 0.06em 0.03em rgb(48, 150, 218);
+}
+
+h3{
+    font-family: 'Jura', sans-serif;
+    margin-top: 1.75em;
+}
+
+.card{
+    font-family: 'Jura', sans-serif;
+    font-size: 1.5em;
+}
+ 
+p {
+    /* color: rgb(233, 161, 27);
+    text-align: center; */
+    font-family: 'Jura', sans-serif;
+    font-size: 20px;
+}
+ 
+#maCarte{
+    height: 100%;
+}
+
+.marker{
+    color: black;
+    font-size: 1.25em; 
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #ffc43fcc;
+    border-color: #e4ab1ccf;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #ffc96fcc;
+    border-color: #e4961c;
+}
+
+
+
+/* NOUVELLES RÈGLES POUR LE FORMAT TABLETTE (ENTRE 415PX ET 991.98PX)*/ 
+@media (min-width: 415px) and (max-width: 991.98px) {
+
+    main{
+        min-height: 90vh !important;
+    }
+
+    h1 {
+    font-size: 45px !important;
+    }
+    p {
+        font-size: 20px;
+    }
+
+    #maCarte{
+    height: 400px;
+    }
+
+    
+}
+    
+  
+/* NOUVELLES RÈGLES POUR LE FORMAT DESKTOP (991.98PX)*/ 
+@media (min-width: 1024px) {
+
+    main{
+        min-height: 90vh;
+    }
+    h1{
+        font-size: 85px;
+    }
+    p {
+       font-size: 18px;
+    }
+    
+    .info {
+        list-style-type: none;
+    }
+
+    #maCarte{
+    height: 100%;
+    }
+    
+}

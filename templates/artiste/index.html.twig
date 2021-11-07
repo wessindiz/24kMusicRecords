@@ -1,0 +1,111 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}24K /Label
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/artiste/index.css') }}">
+{% endblock %}
+
+{% block body %}
+	<div class="label color-change-2x">
+		<main class=" min-vh-100">
+			<h1 class="animate__animated animate__slideInRight text-center fw-bold">Label</h1>
+		</main>
+		<div>
+			<form class="d-flex justify-content-end ">
+				<input class="form-control me-2 searchbar" type="search" name="searchbar" placeholder="rechercher" aria-label="Search">
+				<button class="btn btn-outline-success" type="submit">Rechercher</button>
+			</form>
+		</div>
+
+		<div class="title ">
+			<h1 class="text-center">Les membres du label</h1>
+		</div>
+
+
+		{% if noneArt %}
+			<p>Aucun artiste ne correspond à votre recherche!</p>
+
+		{% else %}
+
+			<div class="example-wrapper container d-flex flex-wrap justify-content-around text-center mt-5 mb-5">
+				{% for artiste in artistes %}
+					<div class="card">
+						<img src="{{ asset('photo-artiste/' ~ artiste.photo)}}" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h4 class="card-title">{{ artiste.nom }}</h4>
+							<h6 class="card-text">
+								{{ artiste.role }}</h6>
+							<h6 class="card-text">
+								{{ artiste.age }}</h6>
+						</div>
+
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item text-center">
+								<button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+									Description
+								</button>
+							</li>
+							<li>
+								<div class="collapse" id="collapseExample">
+									<div class="card card-body">
+										{{ artiste.description}}
+									</div>
+								</div>
+							</li>
+							<li class="list-group-item text-center">
+								<a href="{{ artiste.urlinsta }}" class="card-link">
+									<i class="fab fa-instagram lieninsta"></i>
+								</a>
+								<a href="{{ artiste.urlyoutube }}" class="card-link">
+									<i class="fab fa-youtube lienyt"></i>
+								</a>
+							</li>
+						</ul>
+						<div class="card-body">
+							<div class="card-body text-center crud">
+								<button type="button" class="btn btn-success ">
+									<a href="{{ path('show', {id: artiste.id})}}" class="card-link ">
+										<i class="far fa-eye"></i>
+									</a>
+								</button>
+
+								{% if is_granted("ROLE_ADMIN") %}
+								<button type="button" class="btn btn-info">
+									<a href="{{ path('edit', {id: artiste.id})}}" class="card-link ">
+										<i class="fas fa-pencil-alt"></i>
+									</a>
+								</button>
+								<button type="button" class="btn btn-danger">
+									<a onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce membre ?')" href=" {{ path('delete', {id: artiste.id})}}" class="card-link ">
+										<i class="fas fa-trash-alt"></i>
+									</a>
+								</button>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		{% endif %}
+		
+		
+		{% if is_granted("ROLE_ADMIN") %}
+		<div class="d-flex justify-content-end">
+			<button class="btn btn-outline-danger m-5 ">
+				<a href="{{ path('add_artiste')}}" class="text-reset text-decoration-none">Ajouter un nouvel artiste
+					<i class="fas fa-plus"></i>
+				</button>
+			</a>
+		</div>
+		{% endif %}
+
+
+		{# Pagination #}
+		<div class="d-flex justify-content-center mb-3 ">
+			<span class=""> {{ knp_pagination_render(artistes) }} </span>
+		</div>
+
+	{% endblock %}

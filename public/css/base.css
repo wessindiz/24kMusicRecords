@@ -1,0 +1,206 @@
+
+
+
+@-webkit-keyframes color-change-2x {
+  0% {
+    background: #310a5e;
+  }
+  100% {
+    background: #3210c7;
+  }
+}
+@keyframes color-change-2x {
+  0%{
+    background: #310a5e;
+  }
+  100% {
+    background: #3210c7;
+  }
+}
+
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;}
+
+html{
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  
+.color-change-2x {
+	-webkit-animation: color-change-2x 2s linear infinite alternate both;
+	animation: color-change-2x 2s linear infinite alternate both;
+}
+
+
+/*IMPORTATION DE LA POLICE GOOGLE FONT 'JURA' */
+nav{
+  font-family: 'Jura', sans-serif;  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+
+/* CSS POUR LA BARRE DE NAVIGATION DU MENU */
+.logo{
+    width: 5em;
+}
+ul{
+    list-style: none;
+}
+header, .container-fluid{
+    background-color: black;
+}
+.nav-link{
+    font-family: jura;
+    color: #fcac43 !important;
+    font-size: 1em;
+}
+
+.nav-link .fa-sign-in-alt{
+  color: #fcac43 !important;
+  font-size: 1.5em !important;
+}
+
+.nav-link .fa-door-open {
+  color: #fcac43 !important;
+  font-size: 1.5em !important;
+}
+
+.btnmenu{
+  margin-right: 1em;
+  font-size: 0.5;
+  border-radius:  0.3em;
+  background: linear-gradient(#ff9305, #f0c85c);
+}
+
+.btn-secondary {
+  color: #f1a340 !important;
+  background-color: #000000 !important;
+  border-color: #6c757d;
+  font-size: 1.25em !important;
+}
+
+.fa-user-circle, .fa-door-open, .fa-chart-line{
+  color: #000000 !important;
+}
+
+.dropdown-item{
+  font-size: 1.25em !important;
+}
+
+
+
+
+/* CSS POUR LA BARRE DE NAVIGATION DU FOOTER */
+
+.bottom{
+    background-color: black !important;
+}
+.réseau{
+    background-color: black !important;
+    color: white !important;
+}
+
+.mentions{
+    background-color: black !important;
+}
+
+.mentions a{
+    color: goldenrod !important;
+    font-size: 8px !important;
+    text-decoration: none;
+}
+
+.fab:hover{
+    transform: scale(1.3, 1.3);
+    transition: 0.15s;
+    text-shadow: 0.1em 0.1em 0.03em rgb(97, 96, 93);
+    cursor: pointer; 
+}
+.fab:active{
+    transform: scale(1.3, 1.3);
+    transition: 0.15s;
+    text-shadow: 0.1em 0.1em 0.03em rgb(94, 93, 92);
+}
+
+a i{
+  color: white;
+}
+
+.insta i:hover, .insta:active{
+    color: #e41ec9;
+}
+.snap i:hover, .snap:active{
+    color: rgb(240, 219, 35);
+}
+.fb i:hover, .fb:active{
+    color: rgb(86, 86, 228);
+}
+.twi i:hover, .twi:active{
+    color: rgb(75, 135, 247);
+}
+.yt i:hover, .yt:active{
+    color: rgb(161, 15, 15);
+}
+.sc i:hover, .sc:active{
+    color: rgb(231, 139, 34);
+} 
+
+/* NOUVELLES RÈGLES POUR LE FORMAT TABLETTE (ENTRE 415PX ET 991.98PX)*/ 
+@media (min-width: 415px) and (max-width: 991.98px){
+
+.logo{
+    width: 7em;
+}
+
+.nav-item a{
+  font-size: 30px;
+}
+
+.btnmenu{
+  font-size: 30px !important;
+}
+
+.mentions a{
+    font-size: 10px !important;
+}
+
+.réseau{
+    font-size: 1.25em;
+}
+
+
+}
+/* NOUVELLES RÈGLES POUR LE FORMAT DESKTOP (991.98PX)*/ 
+ @media (min-width: 991.98px) {
+.logo{
+    width: 7em;
+}
+.navbar-collapse{
+  display: flex;
+  justify-content: center;
+}
+
+.nav-item a{
+  font-size: 1.5em;
+  margin-right: 2.5em;
+}
+
+.mentions a{
+    font-size: 18px !important;
+}
+
+.réseau{
+    font-size: 1.5em;
+} 
+
+
+}

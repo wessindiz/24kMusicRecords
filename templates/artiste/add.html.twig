@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Edit Stagiaire!
+{% endblock %}
+
+ {% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/artiste/add.css') }}">
+{% endblock %}
+
+{% block body %}
+	<div class="label color-change-2x">
+
+	
+		<h2 class="text-center">Ajoutez un nouveau membre</h2>
+
+		<div class="d-flex justify-content-center">
+			<div class="m-5 border border-2 border border-warning rounded">
+				{{ form_start(form) }}
+
+
+				<div class="d-flex justify-content-around m-3">
+					<div class="mb-1">
+						{{ form_label(form.nom) }}
+					</div>
+
+					<div class="form-floating mb-4">
+						{{ form_widget(form.nom) }}
+					</div>
+				</div>
+
+				<div class="d-flex justify-content-around m-3">
+					<div class="mb-1">
+						{{ form_label(form.role) }}
+					</div>
+
+					<div class="form-floating mb-4">
+						{{ form_widget(form.role) }}
+					</div>
+				</div>
+
+				<div class="d-flex justify-content-around m-3">
+					<div class="mb-1">
+						{{ form_label(form.age) }}
+					</div>
+
+					<div class="form-floating mb-4">
+						{{ form_widget(form.age) }}
+					</div>
+				</div>
+
+				<div class="d-flex justify-content-around m-3">
+					<div class="mb-1">
+						{{ form_label(form.urlinsta) }}
+					</div>
+
+					<div class="form-floating mb-4">
+						{{ form_widget(form.urlinsta) }}
+					</div>
+				</div>
+
+				<div class="d-flex justify-content-around m-3">
+					<div class="mb-1">
+						{{ form_label(form.urlyoutube) }}
+					</div>
+
+					<div class="form-floating mb-4">
+						{{ form_widget(form.urlyoutube) }}
+					</div>
+				</div>
+
+				<div class="m-3">
+					<div class="mb-1">
+						{{ form_label(form.photo) }}
+					</div>
+
+					<div class="form-label form-floating mb-4">
+						{{ form_widget(form.photo) }}
+					</div>
+				</div>
+
+				<div class="m-3">
+					<div class="mb-1">
+						{{ form_label(form.description) }}
+					</div>
+
+					<div class="form-floating mb-4 ">
+						{{ form_widget(form.description) }}
+					</div>
+				</div>
+
+				<div>
+					{{ form_row(form.soumettre) }}
+				</div>
+				{{ form_end(form) }}
+			</div>
+
+
+		</div>
+	</div>
+</div>{% endblock %}

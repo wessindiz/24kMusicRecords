@@ -1,0 +1,155 @@
+
+
+.card{
+    margin-bottom: 1em;
+    font-family: jura;
+    width: 18rem;
+}
+
+.card-img, .card-img-top {
+    height: 20em;
+}
+
+.label{
+    height: 100%;
+}
+
+main{
+    background: url(../../photos/label1.jpg) no-repeat center/ cover;
+    animation-duration: 2s;
+}
+
+.animate__animated.animate__slideInRight{
+   --animate-duration: 1s;
+}
+ 
+h1 {
+    text-align: center;
+    font-family: 'Jura', sans-serif;
+    padding-top: 2em;
+    font-size: 35px;
+    color: #ffffff;
+    text-shadow: 0.06em 0.06em 0.03em rgb(48, 150, 218);
+  }
+
+h4{
+    font-size: 30px;
+}
+
+h6{
+    font-size: 20px;
+}
+ 
+p {
+    color: rgb(233, 161, 27);
+    text-align: center;
+    font-family: 'Jura', sans-serif;
+    font-size: 0.5em;
+}
+
+.lieninsta{
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+}
+
+.lienyt{
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+}
+
+i.fab.fa-instagram:hover{
+    
+    color: rgb(223, 77, 210);
+}
+
+i.fab.fa-youtube:hover{
+    color: rgb(177, 2, 2);
+}
+
+.fa, .fas.fa-pencil-alt, .fas.fa-trash-alt, .far {
+    color: black;
+}
+
+button a{
+    font-family: jura;
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+button a .fa-plus{
+    color: red;
+    font-size: 12px;
+}
+
+button:hover a .fa-plus {
+    color: rgb(253, 253, 253) !important;
+}
+
+.searchbar{
+    width: 15em !important;
+}
+
+.justify-content-end {
+    margin-top: 2em;
+    margin-right: 1em;
+}
+
+.page-item.active .page-link {
+    color: #fff;
+    background-color: rgb(255, 174, 0);
+    border-color: rgba(252, 199, 13, 0.85);
+}
+
+.page-link {
+    color: rgb(255, 174, 0);
+    background-color: rgb(80, 21, 128);
+    border-radius: 1em;
+    border: 1px solid #000000;
+    font-weight: bold;
+}
+
+.page-item:first-child .page-link {
+    border-radius: 1em;
+}
+.page-item:last-child .page-link {
+    border-radius: 1em;
+}
+
+ .page-item.disabled .page-link{
+    color: rgb(115, 45, 196);
+    border-radius: 1em;
+    background-color: rgb(143, 90, 204);
+    border-color: black;
+}
+
+/* NOUVELLES RÈGLES POUR LE FORMAT TABLETTE (ENTRE 415PX ET 991.98PX)*/ 
+@media (min-width: 415px) and (max-width: 991.98px) {
+
+    main{
+        min-height: 90vh !important;
+    }
+
+        h1 {
+        font-size: 45px !important;
+    }
+    p {
+        font-size: 1.5em;
+    }
+ 
+}
+    
+  
+/* NOUVELLES RÈGLES POUR LE FORMAT DESKTOP (991.98PX)*/ 
+@media (min-width: 1024px) {
+
+    main{
+        min-height: 90vh;
+    }
+    h1{
+        font-size: 85px;
+    }
+    p {
+       font-size: 2.25em;
+    }
+}

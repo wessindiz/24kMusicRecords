@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}24K/Connexion
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/user/login.css') }}">
+{% endblock %}
+
+{% block body %}
+	<div class="label color-change-2x">
+
+
+		<form method="post">
+
+			{% if error %}
+				<div class="alert alert-danger alert-dismissible fade show" style="  font-size: 1.25em; font-family: jura; font-weight: bold; text-align: center; margin-bottom: 0rem;" role="alert">
+				{{ error.messageKey|trans(error.messageData, 'security') }} !
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+			{% endif %}
+
+			{% if app.user %}
+				<div class="mb-3 dejaco">
+					Vous êtes déjà connecté en tant que
+					{{ app.user.pseudo}},
+					<a href="{{ path('app_logout') }}">Déconnexion</a>
+				</div>
+			{% endif %}
+
+			<h1 class="h3 mb-3 font-weight-normal">Connectez-vous</h1>
+			<fieldset class="border border-2 border-warning rounded">
+				<div class="m-5">
+					<div class="row d-flex justify-content-center mb-3">
+						<label for="inputEmail">Votre email</label>
+						<input class="w-25" type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+					</div>
+
+
+					<div class="row d-flex justify-content-center mb-3">
+						<label for="inputPassword">Mot de passe</label>
+						<input class="w-25" type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+					</div>
+
+					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+					<button class="btn btn-lg btn-primary mb-2" type="submit">
+						Se connecter
+					</button>
+				</div>
+				<p class="fs-6">Pas encore de compte? veuillez vous inscrire
+					<a href="/signup">ici</a>
+				</p>
+			</fieldset>
+		</form>
+	</div>
+{% endblock %}

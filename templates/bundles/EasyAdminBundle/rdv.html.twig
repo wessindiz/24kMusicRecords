@@ -1,0 +1,60 @@
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block content_title 'CALENDRIER' %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block main %}
+
+        <div id="calendrier"></div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block body_javascript %}
+<script>
+window.onload = () => {
+	let calendarElt = document.querySelector('#calendrier')
+	let calendar = new FullCalendar.Calendar(calendarElt, {
+	initialView: 'timeGridWeek',
+
+	selecHelper: false,
+	selectOverlap: false,
+	locale: 'fr',
+	timeZone: 'Europe/Paris',
+
+	headerToolbar: {
+		start: 'prev,next today',
+		center: 'title',
+		end: 'timeGridWeek,timeGridDay'
+	},
+
+	events: {{ data| raw }},
+		nowIndicator: true,
+		display: 'inverse-background',
+		editable: true,
+		eventResizableFromStart: true
+	});
+
+	calendar.on('eventChange', (info) => {
+		let url = `/api/${
+		info.event.id
+		}/edit`
+		let donnees = {
+			"title": info.event.title,
+			"description": info.event.extendedProps.description,
+			"start": info.event.start,
+			"end": info.event.end,
+			"backgroundColor": info.event.backgroundColor,
+			"borderColor": info.event.borderColor,
+			"textColor": info.event.textColor
+		}
+
+	})
+	calendar.render()
+}
+	</script>
+{% endblock %}

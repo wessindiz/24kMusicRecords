@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}24K/Inscription
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/user/inscription.css') }}">
+{% endblock %}
+
+
+{% block body %}
+	<div class="label color-change-2x">
+
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success alert-dismissible fade show" role="alert">
+				{{ message }}
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		{% endfor %}
+			<h1 class="h3 mb-3 font-weight-normal">Inscription sur le site</h1>
+
+
+			<div class="m-5 border border-2 border border-warning rounded">
+				{{ form_start(form) }}
+
+				{{ form_row(form.nom, {'label': 'Nom', 'attr': {'class' : 'input-group','placeholder': 'Nom...'} }) }}
+				{{ form_row(form.prenom, {'label': 'Prénom', 'attr': {'class' : 'input-group','placeholder': 'Prénom...'} }) }}
+				{{ form_row(form.pseudo, {'label': 'Pseudo', 'attr': {'class' : 'input-group', 'placeholder': 'Pseudo...'} }) }}
+				{{ form_row(form.email, {'label': 'Mail', 'attr': {'class' : 'input-group','placeholder': 'Adresse mail...'} }) }}
+				{{ form_row(form.password, {'label': 'Mot de passe', 'attr': {'class' : 'input-group','placeholder': 'Mot de passe...'} }) }}
+				{{ form_row(form.confirm_password, {'label': 'Mot de passe', 'attr': {'class' : 'input-group','placeholder': 'Confirmation du mot de passe...'} }) }}
+				<button class="btn btn-success">
+					Inscription!
+				</button>
+
+				{{ form_end(form) }}
+			</div>
+            
+			<div>
+				<p class="fs-5">Déja un compte? veuillez vous connecter
+					<a href="/login">ici</a>
+				</p>
+			</div>
+	</div>
+{% endblock %}

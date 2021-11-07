@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	24K /Studios
+{% endblock %}
+
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/studios.css') }}">
+{% endblock %}
+
+
+{% block body %}
+	<div class="home color-change-2x">
+		<main>
+			<h1 class="animate__animated animate__slideInRight text-center fw-bold">Nos studios</h1>
+		</main>
+		<h2 class="text-center mt-3">Studio d'enregistrement</h2>
+		<video class="video w-100" autoplay loop>
+			<source src="{{ asset('photos/rec.mp4') }}" type="video/mp4">
+		</video>
+		<section class="section1 d-flex">
+			<div class="record1 w-50 h-100"></div>
+			<div class="record2 w-50 h-100"></div>
+		</section>
+		<section class="section2 text-center">
+			<p>Nous vous présentons notre studio d’enregistrement dernier cri. Avec des micros, des enceintes et des logiciels nouvelle génération, vous pouvez venir vous exprimer devant le micro, et faire ressortir votre âme musicale.<br><br>
+				Faites de la musique accompagné de nos ingénieurs du son expérimentés,  qui sauront vous guider au mieux, pour faire sortir ce qu’il y a de meilleur en vous.<br><br>
+				Nos professionnels sauront également vous guider dans 
+										          le partage de votre musique, et la direction artistique de vos projets afin de vous accompagner au mieux dans votre parcours musical.</p>
+		</section>
+		<h2 class="text-center">Studio de photographie</h2>
+		<video class="video" autoplay loop>
+			<source src="{{ asset('photos/shooting.mp4') }}" type="video/mp4">
+		</video>
+		<section class="section3 d-flex">
+			<div class="photo"></div>
+			<div class="camera"></div>
+		</section>
+		<section class="section4 text-center">
+			<p>Vous avez besoin d'un shooting, de retouches photos, ou d'un projet audiovisuel? Nos professionnels sauront vous aider et vous mettre à l’aise.
+				<br><br>
+				Notre studio photo est à votre disposition pour les shootings, les interviews et également les clips vidéo.<br><br>
+				Vous avez la possibilité de créer un book avec nos photographes expérimentés, de tourner un clip vidéo avec nos clippeurs créatifs, ou encore de gérer vos réseaux sociaux
+										      avec l'aide de nos community manager qui connaissent la toile comme leurs poches.<br><br>
+				Prenez la pause et prenez du plaisir !</p>
+		</section>
+	</div>
+{% endblock %}

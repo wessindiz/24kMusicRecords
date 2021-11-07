@@ -1,0 +1,69 @@
+
+
+
+
+.card{
+    font-family: jura;
+    width: 18rem;
+}
+
+.label{
+    height: 100%;
+}
+
+main{
+    background: url(../../photos/label1.jpg) no-repeat center/ cover;
+    animation-duration: 2s;
+}
+
+.animate__animated.animate__slideInRight{
+   --animate-duration: 1s;
+}
+ 
+h1{
+    font-family: 'Jura', sans-serif;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    font-size: 1em;
+    color: #ffffff;
+    text-shadow: 0.06em 0.06em 0.03em rgb(48, 150, 218);
+}
+
+h4{
+    font-size: 30px;
+}
+
+h6{
+    font-size: 20px;
+}
+ 
+p {
+    color: rgb(233, 161, 27);
+    text-align: center;
+    font-family: 'Jura', sans-serif;
+    font-size: 1em;
+}
+
+i.fab.fa-instagram{
+    font-size: 30px;
+    color: black;
+}
+
+i.fab.fa-youtube{
+    color: black;
+    font-size: 30px;
+}
+
+i.fab.fa-instagram:hover{
+    
+    color: rgb(223, 77, 210);
+}
+
+i.fab.fa-youtube:hover{
+    color: rgb(177, 2, 2);
+    
+}
+
+.fa, .fas.fa-pencil-alt, .fas.fa-trash-alt, .far {
+    color: black;
+}

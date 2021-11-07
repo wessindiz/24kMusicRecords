@@ -1,0 +1,115 @@
+
+
+main {
+    min-height: 100vh;
+    background: url("../photos/platine1.jpg") no-repeat center/ cover;
+    animation-duration: 2s;
+}
+
+.tarifrecord, .tarifshooting{
+  margin: 0.5em;
+}
+
+table{
+    text-align: center;
+    color: blanchedalmond;
+    font-size: 15px;
+}
+
+th{
+  color: rgb(206, 151, 68) !important;
+  font-family: jura;
+}
+
+.animate__animated.animate__slideInRight{
+    --animate-duration: 1s;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Jura', sans-serif;
+  padding-top: 2em;
+  font-size: 35px;
+  color: #ffffff;
+  text-shadow: 0.06em 0.06em 0.03em rgb(48, 150, 218);
+}
+
+h2{
+    text-align: center;
+    color: white;
+    font-family: 'Jura', sans-serif;
+}
+
+.tarifrecord{
+    margin-top: 1em;
+}
+
+.rdv{
+  font-family: jura;
+  font-size: 1em;
+}
+
+p {
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  color: #ffa909;
+  text-align: center;
+  font-size: 1.5em;
+  font-family: 'Jura';
+  font-weight: bold;
+}
+  
+  
+  /* NOUVELLES RÈGLES POUR LE FORMAT TABLETTE (ENTRE 768PX ET 991.98PX)*/
+  @media (min-width: 768px) and (max-width: 991.97px) {
+
+    main{
+      min-height: 90vh !important;
+    }
+
+    h1 {
+      font-size: 45px;
+     }
+
+     .tarifrecord, .tarifshooting{
+      margin: 1em;
+    }
+
+    table{
+      text-align: center;
+      color: blanchedalmond;
+      font-size: 25px;
+  }
+
+  .rdv{
+    font-size: 1.5em;
+  }
+  
+  }
+    
+    /* NOUVELLES RÈGLES POUR LE FORMAT DESKTOP (991.98PX)*/ 
+  @media (min-width: 991.98px) {
+
+    main{
+      min-height: 100vh !important;
+    }
+
+    h1 {
+      font-size: 85px;
+     }
+
+     .tarifrecord, .tarifshooting{
+      margin: 2em;
+    }
+
+    table{
+      text-align: center;
+      color: blanchedalmond;
+      font-size: 20px;
+  }
+
+  .rdv{
+    font-size: 1.5em;
+  }
+  
+  }
