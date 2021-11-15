@@ -40,6 +40,7 @@ p {
 }
 
 .marker{
+    text-align: center;
     color: black;
     font-size: 1.25em; 
 }

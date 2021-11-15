@@ -9,13 +9,15 @@
 {% block main %}
 
         <div id="calendrier"></div>
-        </div>
 
-    </div>
 {% endblock %}
 
+
+
 {% block body_javascript %}
+
 <script>
+
 window.onload = () => {
 	let calendarElt = document.querySelector('#calendrier')
 	let calendar = new FullCalendar.Calendar(calendarElt, {

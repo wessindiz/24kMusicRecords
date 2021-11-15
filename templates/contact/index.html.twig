@@ -58,11 +58,11 @@
                     
                     <ul class="info">
                         <li>
-                            <p><i class="fas fa-map-marker-alt"></i> Email : <a href="mailto:wessrosemain@hotmail.fr"> wessrosemain@hotmail.fr</a></p>
+                            <p><i class="fas fa-map-marker-alt"></i> Email : <a href="mailto:adresse@perso.fr"> adresse@perso.fr</a></p>
                         </li>
 
                         <li>
-                            <p><i class="fas fa-phone-alt"></i> N° : <a href="Tel:+33663484450">06 63 48 44 50</a></p>
+                            <p><i class="fas fa-phone-alt"></i> Tèl : <a href="Tel:+336xxxxxx50">06 XX XX XX 50</a></p>
                         </li>
                             
                         <li>
@@ -87,10 +87,10 @@
 {% endblock %}
 
 {% block javascripts %}
-<script>
 
+<script>
     //on initialise la carte
-    let carte = L.map('maCarte').setView([48.78506337401253, 2.435257738510173], 17);
+    let carte = L.map('maCarte').setView([48.78506337401253, 2.435257738510173], 15);
 
     // On charge les "tuiles"
     L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
@@ -101,7 +101,8 @@
 
     //On met en place un marqueur pour bien cibler la zone
     let marqueur = L.marker([48.78506337401253, 2.435257738510173]).addTo(carte);
-    marqueur.bindPopup("<p class='marker'><b>Endroit fictif du studio 24 Carats Studio <br>(Car il s'agit de l'Afpa)</b><p>");
+    marqueur.bindPopup("<p class='marker'><b>Localisation fictive du studio 24 Carats Studio (Car il s'agit de l'Afpa)</b><p>");
 
 </script>
+
 {% endblock %}
