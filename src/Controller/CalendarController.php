@@ -18,21 +18,6 @@ use Symfony\Component\Routing\Annotation\Route;
 class CalendarController extends AbstractController
 {
 
-
-    /**
-     * @Route("/index", name="calendar_index", methods={"GET"})
-     */
-    public function index(CalendarRepository $calendarRepository): Response
-    {
-        return $this->render('calendar/index.html.twig', [
-            'calendars' => $calendarRepository->findAll(),
-
-        ]);
-    }
-
-
-
-
     /**
      * @Route("/new", name="calendar_new", methods={"GET","POST"})
      */
@@ -59,8 +44,6 @@ class CalendarController extends AbstractController
                 $calendar->setTextColor('#ffffff'); //NOIR
             };
 
-            
-        
             $hStarts  = $calendarRepo->findByStart();
 
             $hEnds  = $calendarRepo->findByEnd();
@@ -75,15 +58,12 @@ class CalendarController extends AbstractController
 
             $horaires = [];
 
-
             for ($i = 0; $i < count($hStarts); $i++) {
                 $horaires[$i]['start' . $i] = $hStarts[$i];
                 $horaires[$i]['end' . $i] = $hEnds[$i];
             }
 
-
             $PeutPrendreRdv = true;
-
 
             for ($j = 0; $j < count($horaires); $j++) {
                 if ($toutRDV[$j]->getCategorie()->getId() == $newCategorie->getId()) {
@@ -107,16 +87,13 @@ class CalendarController extends AbstractController
                 };
             };
 
-
             if ($PeutPrendreRdv) {
                 $entityManager = $this->getDoctrine()->getManager(); 
                 $entityManager->persist($calendar);
                 $entityManager->flush();
                 $this->addFlash('success', 'Votre rendez-vous a bien été enregistré, pour tout changements, veuillez vous diriger vers la page "contact" !');
             }
-            
         }
-
 
        $events = $calendarRepo->findAll();
 
@@ -145,27 +122,6 @@ class CalendarController extends AbstractController
     }
 
 
-
-
-
-
-    /**
-     * @Route("/{id}", name="calendar_show", methods={"GET"})
-     */
-    public function show(Calendar $calendar): Response
-    {
-
-        return $this->render('calendar/show.html.twig', [
-            'calendar' => $calendar,
-
-
-        ]);
-    }
-
-
-
-
-
     /**
      * @Route("/{id}/edit", name="calendar_edit", methods={"GET","POST"})
      */
@@ -179,7 +135,6 @@ class CalendarController extends AbstractController
 
             return $this->redirectToRoute('calendar_index', [], Response::HTTP_SEE_OTHER);
         }
-
         return $this->renderForm('calendar/edit.html.twig', [
             'calendar' => $calendar,
             'form' => $form,
@@ -187,12 +142,10 @@ class CalendarController extends AbstractController
     }
 
 
-
-
     /**
-     * @Route("/{id}", name="calendar_delete", methods={"POST"})
+     * @Route("/{id}/delete", name="calendar_delete", methods={"PUT"})
      */
-    public function delete(Request $request, Calendar $calendar): Response
+    public function delete(Request $request, ?Calendar $calendar): Response
     {
         if ($this->isCsrfTokenValid('delete' . $calendar->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
@@ -202,5 +155,5 @@ class CalendarController extends AbstractController
 
         return $this->redirectToRoute('calendar_index', [], Response::HTTP_SEE_OTHER);
     }
-
+    
 }

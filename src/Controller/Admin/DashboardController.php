@@ -173,6 +173,17 @@ class DashboardController extends AbstractDashboardController
         ]);
         
     }
+
+    /**
+     * @Route("/allrdv", name="allrdv", methods={"GET"})
+     */
+     public function AllRdv(CalendarRepository $calendarRepository): Response
+     {
+         return $this->render('bundles/EasyAdminBundle/index.html.twig', [
+             'calendars' => $calendarRepository->findAll(),
+         ]);
+     }
+ 
 }
 
 

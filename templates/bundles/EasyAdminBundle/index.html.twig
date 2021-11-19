@@ -1,4 +1,5 @@
-{% extends 'base.html.twig' %}
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{% extends '@EasyAdmin/page/content.html.twig' %}
 
 {% block title %}Calendar index{% endblock %}
 
@@ -10,15 +11,14 @@
             <tr>
                 <th>Id</th>
                 <th>Title</th>
-                <th>Start</th>
-                <th>End</th>
+                <th>Début</th>
+                <th>Fin</th>
                 <th>Description</th>
                 <th>Catégorie</th>
-                <th>All_day</th>
+                <th>Actions</th>
                 {# <th>Background_color</th>
                 <th>Border_color</th>
                 <th>Text_color</th> #}
-                <th>actions</th>
             </tr>
         </thead>
         <tbody>
@@ -34,8 +34,16 @@
                 <td>{{ calendar.borderColor }}</td>
                 <td>{{ calendar.textColor }}</td> #}
                 <td>
-                    <a href="{{ path('calendar_show', {'id': calendar.id}) }}">show</a>
-                    <a href="{{ path('calendar_edit', {'id': calendar.id}) }}">edit</a>
+                <button type="button" class="btn btn-info">
+									<a href="{{ path('calendar_edit', {'id': calendar.id}) }}">
+										<i class="fas fa-pencil-alt"></i>
+									</a>
+								</button>
+								<button type="button" class="btn btn-danger">
+									<a href="{{ path('calendar_delete', {'id': calendar.id}) }}">
+										<i class="fas fa-trash-alt"></i>
+									</a>
+								</button>
                 </td>
             </tr>
         {% else %}

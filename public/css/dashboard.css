@@ -27,7 +27,9 @@ table a{
     border-color: #59195e !important;
 }
 
-.btn-primary, .btn-primary:not(:disabled):not(.disabled):not(.btn-link):active, .btn-primary:not(:disabled):not(.disabled):not(.btn-link):active:focus, .btn-primary:not(:disabled):not(.disabled):not(.btn-link):focus, .btn-primary:not(:disabled):not(.disabled):not(.btn-link):hover {
+.btn-primary, .btn-primary:not(:disabled):not(.disabled):not(.btn-link):active, 
+.btn-primary:not(:disabled):not(.disabled):not(.btn-link):active:focus, 
+.btn-primary:not(:disabled):not(.disabled):not(.btn-link):focus, .btn-primary:not(:disabled):not(.disabled):not(.btn-link):hover {
     background-color: #d250dc !important;
 }    
 

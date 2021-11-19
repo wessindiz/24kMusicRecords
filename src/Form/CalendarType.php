@@ -21,7 +21,7 @@ class CalendarType extends AbstractType
     {
         $builder
             ->add('categorie', EntityType::class, ['class'=> Categorie::class, 'placeholder' => 'Choisissez un studio', 'choice_label'=>'nom', 'required'   => true])
-            ->add('title', TextType::class, ['attr' => ['placeholder' => 'Votre Nom et Prénom','required'   => true]])
+            ->add('title', TextType::class, ['label'=>'Prénom et Nom', 'attr' => ['placeholder' => 'Votre Nom et Prénom','required'   => true]])
             ->add('start', DateTimeType::class, ['input'=>'datetime','date_widget' => 'single_text', 'time_widget' => 'single_text','placeholder' => "yyyy-mm-dd"])
             ->add('end', DateTimeType::class, ['input'=>'datetime','date_widget' => 'single_text', 'time_widget' => 'single_text', 'placeholder' => "yyyy-mm-dd"])
             ->add('description')
