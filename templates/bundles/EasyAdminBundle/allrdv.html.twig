@@ -4,7 +4,7 @@
 {% block title %}Calendar index{% endblock %}
 
 {% block body %}
-    <h1>Calendar index</h1>
+    <h1 class="rdvtitle">Tous les Rendez-vous</h1>
 
     <table class="table">
         <thead>
@@ -35,7 +35,7 @@
                 <td>{{ calendar.textColor }}</td> #}
                 <td>
                 <button type="button" class="btn btn-info">
-									<a href="{{ path('calendar_edit', {'id': calendar.id}) }}">
+									<a href="{{ path('editrdv', {'id': calendar.id}) }}">
 										<i class="fas fa-pencil-alt"></i>
 									</a>
 								</button>

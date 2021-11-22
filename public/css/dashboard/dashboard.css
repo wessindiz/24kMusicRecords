@@ -1,4 +1,12 @@
 
+
+.rdvtitle{
+    color: white;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
 main{
     color: white;
 }
@@ -15,11 +23,12 @@ main{
 }
 
 table{
-    color: white !important;
+    color: deeppink  !important;
+    font-family: jura;
 }
 
 table a{
-    color: white !important;
+    color: deeppink  !important;
 }
 
 .page-item.active .page-link {
@@ -90,7 +99,7 @@ font-size: 2em;
     align-items: flex-start;
     color: var(--sidebar-menu-color);
     display: flex;
-    padding: 4px 4px 4px0;
+    padding: 4px 4px 4px 0;
     font-size: 1.25em;
     font-family: 'Jura';
     margin-top: 2em;
@@ -141,3 +150,54 @@ font-size: 2em;
 .bg-custom{
     background-color: rgba(39,41,60,255) !important;
 }
+
+.fc .fc-timegrid-axis-frame {
+    display: none !important;
+}
+
+.fc .fc-timegrid-axis-cushion {
+    display: none !important;
+}
+
+.fc .fc-daygrid-day-frame {
+    display: none !important;
+}
+
+.fc .fc-timegrid-axis-frame {
+    display: none !important;
+}
+
+.fc-direction-ltr .fc-button-group>.fc-button:not(:last-child) {
+    background: blueviolet !important;
+}
+
+.fc .fc-button-group>.fc-button {
+    background: blueviolet !important;
+}
+
+.fc .fc-toolbar-title {
+    color: blueviolet !important;
+    font-family: jura;
+}
+
+
+
+.text-left {
+    font-size: 1.45em !important;
+    color: unset;
+}
+
+.fc-direction-ltr .fc-toolbar>*>:not(:first-child) {
+    background: blueviolet;
+    font-family: 'Jura';
+    font-weight: bold;
+    color: white;
+}
+
+
+.fc-direction-ltr {
+    height: 55em !important;
+    width: 110em !important;
+    font-size: 1.05em !important;
+}
+

@@ -122,24 +122,7 @@ class CalendarController extends AbstractController
     }
 
 
-    /**
-     * @Route("/{id}/edit", name="calendar_edit", methods={"GET","POST"})
-     */
-    public function edit(Request $request, Calendar $calendar): Response
-    {
-        $form = $this->createForm(CalendarType::class, $calendar);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('calendar_index', [], Response::HTTP_SEE_OTHER);
-        }
-        return $this->renderForm('calendar/edit.html.twig', [
-            'calendar' => $calendar,
-            'form' => $form,
-        ]);
-    }
 
 
     /**

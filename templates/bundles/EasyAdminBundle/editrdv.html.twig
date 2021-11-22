@@ -1,10 +1,7 @@
-{% extends 'base.html.twig' %}
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{% extends '@EasyAdmin/page/content.html.twig' %}
 
 {% block title %}Calendrier
-{% endblock %}
-
-{% block stylesheets %}
-	<link rel="stylesheet" href="{{ asset('css/calendar/new.css') }}">
 {% endblock %}
 
 {% block body %}

@@ -179,10 +179,31 @@ class DashboardController extends AbstractDashboardController
      */
      public function AllRdv(CalendarRepository $calendarRepository): Response
      {
-         return $this->render('bundles/EasyAdminBundle/index.html.twig', [
+         return $this->render('bundles/EasyAdminBundle/allrdv.html.twig', [
              'calendars' => $calendarRepository->findAll(),
          ]);
      }
+    
+    
+     /**
+     * @Route("/{id}/editrdv", name="editrdv", methods={"GET","POST"})
+     */
+    public function editRdv(Request $request, Calendar $calendar, CalendarRepository $calendarRepository): Response
+    {
+        $form = $this->createForm(CalendarType::class, $calendar);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('allrdv', [], Response::HTTP_SEE_OTHER);
+        }
+        return $this->renderForm('bundles/EasyAdminBundle/editrdv.html.twig', [
+            'calendar' => $calendar,
+            'form' => $form,
+            'calendars' => $calendarRepository->findAll(),
+        ]);
+    }
  
 }
 
