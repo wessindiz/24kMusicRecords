@@ -49,7 +49,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Artistes', 'fas fa-music', Artiste::class);
         yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-users', User::class);
         yield MenuItem::linkToRoute('Calendrier', 'far fa-calendar-alt', 'rdv', ['routeParamName' => 'routeParamValue']);
-        yield MenuItem::linkToRoute('Statistiques', 'far fa-calendar-alt', 'stats', ['routeParamName' => 'routeParamValue']);
+        yield MenuItem::linkToRoute('Statistiques', 'fas fa-chart-bar', 'stats', ['routeParamName' => 'routeParamValue']);
         yield MenuItem::linkToRoute('Retour sur le site', 'fas fa-home', 'home', ['routeParamName' => 'routeParamValue']);
         yield MenuItem::linkToLogout('Déconnexion', 'fas fa-door-open');
     }
