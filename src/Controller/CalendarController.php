@@ -36,12 +36,12 @@ class CalendarController extends AbstractController
             if ($categorieChoisie->getNom() == "Musique") {
                 $calendar->setBackgroundColor('#158968'); //VERT 
                 $calendar->setBorderColor('#000000'); //NOIR 
-                $calendar->setTextColor('#ffffff'); //NOIR
+                $calendar->setTextColor('#000000'); //NOIR
             } else {
                 # la catégorie choisie est donc Photo
                 $calendar->setBackgroundColor('#cb2a2a'); //ROUGE
                 $calendar->setBorderColor('#000000'); //NOIR
-                $calendar->setTextColor('#ffffff'); //NOIR
+                $calendar->setTextColor('#000000'); //NOIR
             };
 
             $hStarts  = $calendarRepo->findByStart();
@@ -103,8 +103,8 @@ class CalendarController extends AbstractController
                 'id' => $event->getId(),
                 'start' => $event->getStart()->format('Y-m-d H:i:s'),
                 'end' => $event->getEnd()->format('Y-m-d H:i:s'),
-               // 'title' => $event->getTitle(),
-               // 'description' => $event->getDescription(),
+                //'title' => $event->getTitle(),
+                //'description' => $event->getDescription(),
                 'backgroundColor' => $event->getBackgroundColor(),
                 'borderColor' => $event->getBorderColor(),
                 'textColor' => $event->getTextColor(),

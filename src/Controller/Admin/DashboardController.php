@@ -14,13 +14,15 @@ use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 
 class DashboardController extends AbstractDashboardController
 {
     /**
-     * @Route("/admin", name="admin")
-     */
+    * @IsGranted("ROLE_ADMIN", StatusCode=404, Message="Cet accès vous est interdit!")
+    * @Route("/admin", name="admin")
+    */
     public function index(): Response
     {
         $repo = $this->getDoctrine()->getRepository(Artiste::class);
@@ -56,6 +58,7 @@ class DashboardController extends AbstractDashboardController
 
 
     /**
+    * @IsGranted("ROLE_ADMIN", StatusCode=404, Message="Cet accès vous est interdit!") 
     * @Route("/stats", name="stats")
     */
     public function statistique(){
@@ -65,6 +68,7 @@ class DashboardController extends AbstractDashboardController
 
 
     /**
+    * @IsGranted("ROLE_ADMIN", StatusCode=404, Message="Cet accès vous est interdit!") 
     * @Route("/rdv", name="rdv")
     */
     public function rdv(Request $request, CalendarRepository $calendarRepo){   
@@ -175,8 +179,9 @@ class DashboardController extends AbstractDashboardController
     }
 
     /**
-     * @Route("/allrdv", name="allrdv", methods={"GET"})
-     */
+    * @IsGranted("ROLE_ADMIN", StatusCode=404, Message="Cet accès vous est interdit!")
+    * @Route("/allrdv", name="allrdv", methods={"GET"})
+    */
      public function AllRdv(CalendarRepository $calendarRepository): Response
      {
          return $this->render('bundles/EasyAdminBundle/allrdv.html.twig', [
@@ -185,9 +190,10 @@ class DashboardController extends AbstractDashboardController
      }
     
     
-     /**
-     * @Route("/{id}/editrdv", name="editrdv", methods={"GET","POST"})
-     */
+    /**
+    * @IsGranted("ROLE_ADMIN", StatusCode=404, Message="Cet accès vous est interdit!")
+    * @Route("/{id}/editrdv", name="editrdv", methods={"GET","POST"})
+    */
     public function editRdv(Request $request, Calendar $calendar, CalendarRepository $calendarRepository): Response
     {
         $form = $this->createForm(CalendarType::class, $calendar);

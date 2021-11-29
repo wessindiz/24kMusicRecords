@@ -66,12 +66,7 @@
 						</ul>
 						<div class="card-body">
 							<div class="card-body text-center crud">
-								<button type="button" class="btn btn-success ">
-									<a href="{{ path('show', {id: artiste.id})}}" class="card-link ">
-										<i class="far fa-eye"></i>
-									</a>
-								</button>
-
+								
 								{% if is_granted("ROLE_ADMIN") %}
 								<button type="button" class="btn btn-info">
 									<a href="{{ path('edit', {id: artiste.id})}}" class="card-link ">

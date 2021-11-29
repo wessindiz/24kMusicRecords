@@ -11,13 +11,14 @@ use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ArtisteController extends AbstractController
 {
     /**
-     * @Route("/artiste", name="artiste")
-     */
+    * @Route("/artiste", name="artiste")
+    */
     public function index(Request $request,ArtisteRepository $artisteRepository, PaginatorInterface $paginator): Response
     {
         //Recherche des artistes par leur nom (searchbar)
@@ -60,22 +61,9 @@ class ArtisteController extends AbstractController
 
 
     /**
-     * @Route("/artiste/show/{id}", name="show")
-     */
-    public function showArtiste($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $artiste = $em->getRepository(Artiste::class)->find($id);
-
-        return $this->render('artiste/show.html.twig', [
-            'artiste' => $artiste,
-        ]);
-    }
-
-
-     /**
-     * @Route("/artiste/edit/{id}", name="edit")
-     */
+    * @IsGranted("ROLE_ADMIN", StatusCode=404, Message="Cet accès vous est interdit!") 
+    * @Route("/artiste/edit/{id}", name="edit")
+    */
     public function editArtist($id, Request $request)
     {
 
@@ -124,8 +112,9 @@ class ArtisteController extends AbstractController
 
     
     /**
-     * @Route("/artiste/delete/{id}", name="delete")
-     */
+    * @IsGranted("ROLE_ADMIN", StatusCode=404, Message="Cet accès vous est interdit!")  
+    * @Route("/artiste/delete/{id}", name="delete")
+    */
     public function deleteArtist($id)
     {
 
@@ -144,8 +133,9 @@ class ArtisteController extends AbstractController
     }
 
     /**
-     * @Route("/artiste/add", name="add_artiste")
-     */
+    * @IsGranted("ROLE_ADMIN", StatusCode=404, Message="Cet accès vous est interdit!") 
+    * @Route("/artiste/add", name="add_artiste")
+    */
     public function newArtist(Request $request)
     {
         $em = $this->getDoctrine()->getManager();

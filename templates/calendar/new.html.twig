@@ -133,7 +133,7 @@ window.onload = () => {
 	let calendar = new FullCalendar.Calendar(calendarElt, {
 	initialView: 'timeGridWeek',
 
-	selecHelper: false,
+
 	selectOverlap: false,
 	locale: 'fr',
 	timeZone: 'Europe/Paris',
@@ -146,26 +146,10 @@ window.onload = () => {
 
 	events: {{ data| raw }},
 		nowIndicator: true,
-		display: 'inverse-background',
-		editable: true,
-		eventResizableFromStart: true
+		//editable: true,
+		//eventResizableFromStart: true
 	});
-
-	calendar.on('eventChange', (info) => {
-		let url = `/api/${
-		info.event.id
-		}/edit`
-		let donnees = {
-			"title": info.event.title,
-			"description": info.event.extendedProps.description,
-			"start": info.event.start,
-			"end": info.event.end,
-			"backgroundColor": info.event.backgroundColor,
-			"borderColor": info.event.borderColor,
-			"textColor": info.event.textColor
-		}
-
-	})
+	
 	calendar.render()
 }
 	</script>
