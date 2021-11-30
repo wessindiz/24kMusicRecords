@@ -36,12 +36,12 @@ class CalendarController extends AbstractController
             if ($categorieChoisie->getNom() == "Musique") {
                 $calendar->setBackgroundColor('#158968'); //VERT 
                 $calendar->setBorderColor('#000000'); //NOIR 
-                $calendar->setTextColor('#000000'); //NOIR
+                $calendar->setTextColor('#f3f0eb'); //NOIR
             } else {
                 # la catégorie choisie est donc Photo
                 $calendar->setBackgroundColor('#cb2a2a'); //ROUGE
                 $calendar->setBorderColor('#000000'); //NOIR
-                $calendar->setTextColor('#000000'); //NOIR
+                $calendar->setTextColor('#f3f0eb'); //NOIR
             };
 
             $hStarts  = $calendarRepo->findByStart();
@@ -67,19 +67,23 @@ class CalendarController extends AbstractController
 
             for ($j = 0; $j < count($horaires); $j++) {
                 if ($toutRDV[$j]->getCategorie()->getId() == $newCategorie->getId()) {
+                    //SI LE DÉBUT D'UN RDV EXISTANT EST INFÉRIEUR OU ÉGAL À L'HEURE DE DÉBUT D'UN NVX RDV, ET QUE LA FIN D'UN RDV EXISTANT EST SUPÉRIEUR À L'HEURE DE DÉBUT D'UN NVX RDV.
                     if ($horaires[$j]['start' . $j]["start"] <= $newStart &&  $horaires[$j]['end' . $j]["end"] > $newStart) {
                         $PeutPrendreRdv = false;
                         $this->addFlash('danger', 'Ce créneau horaire est déjà pris, veuillez regarder les disponibilités sur le calendrier !');
                         break;
-                    } elseif ($newEnd > $horaires[$j]['start' . $j]["start"] && $newEnd <= $horaires[$j]['end' . $j]["end"]) {
+                    }  //SI LE DÉBUT D'UN RDV EXISTANT EST INFÉRIEUR À L'HEURE DE FIN D'UN NVX RDV, ET QUE LA FIN D'UN RDV EXISTANT EST SUPÉRIEUR OU ÉGAL À L'HEURE DE FIN D'UN NVX RDV.
+                    elseif ($newEnd > $horaires[$j]['start' . $j]["start"] && $newEnd <= $horaires[$j]['end' . $j]["end"]) {
                         $PeutPrendreRdv = false;
                         $this->addFlash('danger', 'Ce créneau horaire est déjà pris, veuillez regarder les disponibilités sur le calendrier !');
                         break;
-                    } elseif ($newStart <= $horaires[$j]['start' . $j]["start"] && $newEnd >= $horaires[$j]['end' . $j]["end"]) {
+                    }  //SI LE DÉBUT D'UN RDV EXISTANT EST SUPÉRIEUR OU ÉGAL À L'HEURE DE DÉBUT D'UN NVX RDV, ET QUE LA FIN D'UN RDV EXISTANT EST INFÉRIEUR À L'HEURE DE FIN D'UN NVX RDV.
+                    elseif ($newStart <= $horaires[$j]['start' . $j]["start"] && $newEnd >= $horaires[$j]['end' . $j]["end"]) {
                         $PeutPrendreRdv = false;
                         $this->addFlash('danger', 'Ce créneau horaire est déjà pris, veuillez regarder les disponibilités sur le calendrier !');
                         break;
-                    } elseif ($newStart >= $horaires[$j]['start' . $j]["start"] && $newEnd <= $horaires[$j]['end' . $j]["end"]) {
+                    }  //SI LE DÉBUT D'UN RDV EXISTANT EST INFÉRIEUR OU ÉGAL À L'HEURE DE DÉBUT D'UN NVX RDV, ET QUE LA FIN D'UN RDV EXISTANT EST SUPÉRIEUR À L'HEURE DE FIN D'UN NVX RDV.
+                    elseif ($newStart >= $horaires[$j]['start' . $j]["start"] && $newEnd <= $horaires[$j]['end' . $j]["end"]) {
                         $PeutPrendreRdv = false;
                         $this->addFlash('danger', 'Ce créneau horaire est déjà pris, veuillez regarder les disponibilités sur le calendrier !');
                         break;
