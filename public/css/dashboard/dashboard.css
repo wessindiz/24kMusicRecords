@@ -196,8 +196,26 @@ font-size: 2em;
 
 
 .fc-direction-ltr {
+    height: 55em
+ !important;
+    width: 50em
+ !important;
+    font-size: 1.05em !important;
+}
+
+
+
+.fc-direction-ltr {
     height: 55em !important;
     width: 110em !important;
     font-size: 1.05em !important;
 }
 
+/* NOUVELLES RÈGLES POUR LE FORMAT DESKTOP (991.98PX)*/ 
+@media (min-width: 1024px) {
+    .fc-direction-ltr {
+        height: 55em !important;
+        width: 110em !important;
+        font-size: 1.05em !important;
+    } 
+}
